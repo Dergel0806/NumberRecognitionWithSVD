@@ -162,7 +162,7 @@ for(i in 1:8){
 }
 ```
 
-## Display first 8 images from test data
+## Test data
 
 Display first 8 images from test data.
 
@@ -187,7 +187,7 @@ displaySingularImage <- function(digit, imageNumber=1){
 }
 ```
 
-### Singular image 1
+### Singular images №1
 
 Display first singular images of each digit.
 
@@ -198,7 +198,7 @@ for(i in 0:9){
 }
 ```
 
-### Singular image 5
+### Singular images №5
 
 Display singular image number 5 of each digit.
 
@@ -209,7 +209,7 @@ for(i in 0:9){
 }
 ```
 
-### Singular image 100
+### Singular images №100
 
 Display singular image number 100 of each digit. Those images contains a mostly noise.
 
