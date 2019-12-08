@@ -1536,6 +1536,7 @@ div.tocify {
         U &lt;- cbind(U, A %*% V[, i] / sV[i])
     }  
     U &lt;- cbind(U, null_complement(U))
+    U &lt;- U[1:dim(A)[1], 1:dim(A)[1]]
     
     return(list(&#39;U&#39; = U, &#39;Sigma&#39; = sigma, &#39;V&#39; = V))
     
@@ -1611,6 +1612,12 @@ for(i in 1:length(digits)){
     digitTrain[[i]] &lt;- na.omit(as.matrix(trainInput[trainOutput == digits[[i]],]))
 }
 names(digitTrain) &lt;- digits</code></pre>
+</div>
+<div id="test-svd-function" class="section level1">
+<h1>Test SVD function</h1>
+<pre class="r"><code>all(abs(SVD(trainInput)$U %*% SVD(trainInput)$Sigma %*% t(SVD(trainInput)$V) - trainInput) &lt; exp(-16))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<p>As we can see, SVD decomposition matches matrix up to computational error.</p>
 </div>
 <div id="visual-investigation" class="section level1">
 <h1>Visual investigation</h1>

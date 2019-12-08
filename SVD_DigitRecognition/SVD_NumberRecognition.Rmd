@@ -150,6 +150,14 @@ for(i in 1:length(digits)){
 names(digitTrain) <- digits
 ```
 
+# Test SVD function
+
+```{r}
+all(abs(SVD(trainInput)$U %*% SVD(trainInput)$Sigma %*% t(SVD(trainInput)$V) - trainInput) < exp(-16))
+```
+
+As we can see, SVD decomposition matches matrix up to computational error.
+
 # Visual investigation
 
 ## Train data
